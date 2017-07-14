@@ -5,6 +5,14 @@
 	font-family: FontAwesome,'Roboto', sans-serif;
 }
 
+.opciones, .profile, .questions, .saldo, .tarifa{
+	background-color: #DCDDDF;
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+}
+
+/***********************SECCIÓN INICIO*****************************/
 .intro{
 	background-color: #414143;
 	background-position: center;
@@ -57,17 +65,10 @@
 	margin-top: 60px;
 }
 
-/***********************FIN SECCIÓN INICIO*****************************/
+/***********************SECCIÓN OPTIONS*****************************/
 
 .drive{
 	background-color: #727B99;
-}
-
-.opciones{
-	background-color: #DDDEE0;
-	background-position: center;
-	background-size: cover;
-	height: 100vh;
 }
 
 .menu-opciones{
@@ -97,14 +98,7 @@ ul li a i .icon-option{
 	color: #FCAD00;
 }
 
-/***********************FIN SECCIÓN OPTIONS*****************************/
-
-.profile, .questions{
-	background-color: #DCDDDF;
-	background-position: center;
-	background-size: cover;
-	height: 100vh;
-}
+/***********************SECCIÓN PROFILE*****************************/
 
 .fondo{
 	background-color: #FCAD00;
@@ -132,8 +126,23 @@ img.responsive-img.imagen-prof{
 	color: #3E3F41;
 }
 
-/***********************FIN SECCIÓN OPTIONS*****************************/
+/***********************SECCIÓN QUESTIONS*****************************/
 
 .preguntas{
 	color: white;
 }
+
+.collapsible-header{
+	font-weight: bold;
+	font-size: 15px;
+}
+
+/***********************SECCIÓN RESIDUE*****************************/
+
+.residue{
+	margin-top: 120px;
+}
+
+
+/***********************SECCIÓN TARIFA*****************************/
+
