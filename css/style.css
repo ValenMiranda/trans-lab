@@ -34,7 +34,7 @@
 	border: none;
 	background-color: #FCAD00;
 	color: #414143;
-	padding: 20px 20px;
+	margin-bottom: 10px;
 }
 
 .forget{
@@ -54,5 +54,24 @@
 }
 
 .down{
-	margin-top: 100px;
+	margin-top: 60px;
+}
+
+/***********************FIN SECCIÓN INICIO*****************************/
+
+.opciones{
+	background-color: #DDDEE0;
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+}
+
+.btn-opciones{
+	width: 100%;
+	border-radius: 0;
+	border: none;
+	background-color: #FCAD00;
+	color: white;
+	padding: 20px 20px;
+	margin-top: 20px;
 }
