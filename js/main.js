@@ -5,71 +5,52 @@ $(document).ready(function(){
 
   $('.collapsible').collapsible();
 
-
-$('#validar').click(function() {
-    // Expresion regular para validar el correo
-    var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
-
-    // Se utiliza la funcion test() nativa de JavaScript
-    if (regex.test($('#email').val().trim())) {
-        $("#iniciar-sesion").attr("href","options.html");
-    } else {
-        alert('La direccón de correo no es valida');
-    }
-});
-
-// set password variable
-        var pswd = $(this).val();
-        //validate the length
-        if ( pswd.length < 6 ) {
-            $('#length').removeClass('valid').addClass('invalid');
-        } else {
-            $('#length').removeClass('invalid').addClass('valid');
+$("#validar").on("click", function(e) {
+        correo();
+        pass();
+        if(correo() && pass()){
+            var emailVal = $("#email").val();
+            /* guardar el correo */
+            localStorage.setItem('email',emailVal);
+            /* Si esta correcto, envía a la página del perfil */
+            window.open('options.html','_self',false);
         }
-
-        //validate number
-        if ( pswd.match(/\d/) ) {
-            $('#number').removeClass('invalid').addClass('valid');
-        } else {
-            $('#number').removeClass('valid').addClass('invalid');
+    });
+    $(".grupo").on("keypress", "input", function(e) {
+        var errorInput = $(this).parent("div").parent("div").find(".hidden").length;
+        if(errorInput == 0) {
+            $(this).parent("div").parent("div").find(".alert").addClass('hidden');
+        }        
+    });
+    //FUNCION PARA VALIDAR EL CORREO
+    function correo(){
+        var emailVal = $("#email").val();
+        /*console.log("tu email", emailVal);*/
+        if (!(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/).test(emailVal)){
+            $("#error-email").removeClass('hidden');
+            $("#error-email").text('Debes ingresar un email valido.');
+            return false;
+        } else{
+            /*localStorage.setItem('email',emailVal);*/
+            return true;
         }
-
-//mail guardado en local storage en el perfil
-  var email = localStorage.getItem("email");
-  $("#text-email").text(mail);
-
-//guarda numero de tarjetas
-  var contador = localStorage.length;
-  if (contador === null) {
-    contador = 1;
-  } 
-
-  $("#btn-agregar").on("click", function(e){
-    var numero = $("#tarjeta-input").val();
-    var regexNum = new RegExp("^([0-9]{8})$");
-
-    if(!regexNum.test(numero) || numero == ""){
-    
-       $(".malo").show();
-    }else{
-     $(".malo").hide();
-     $(".tarjetas-guardadas").append("<div class='num-area'><p id='num"+cont+"'>"+numero+"</p></div>");
-     cont++;
-     localStorage.setItem("bip"+cont, numero);
-     $("#tarjeta-input").val("");
     }
-  });
-
-  //escribe los numeros de tarjetas al recargar
-  for(var i = 0; i < localStorage.length; i++){
-    var regexStorage = new RegExp("^([0-9]{8})$");
-    var kei = localStorage.key(i);
-    var valuee = localStorage.getItem(kei);
-    if(kei.startsWith("bip")){
-      $(".tarjetas-guardadas").append("<div class='num-area'><p id='num"+kei+"'>"+valuee+"</p></div>");
+    // FUNCION PARA VALIDAR LA CONTRASEÑA
+    function pass(){
+        var contrasenaValue = $("#pswd").val();
+        /*console.log("contraseña", contrasenaValue);*/
+        if(!(/^\d{8,}$/).test(contrasenaValue)) {
+            $("#error-pass").removeClass('hidden');
+            $("#error-pass").text('Debes ingresar una contraseña valida');
+            $("#pswd").val("");
+            return false;
+        }else {
+            return true;
+        }
     }
+
     
-  }
+
 
 
 

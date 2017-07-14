@@ -22,7 +22,7 @@
 
 .logo{
 	height: 20vh;
-	margin-top: 80px;
+	margin-top: 50px;
 }
 
 .trans-text{
@@ -42,6 +42,7 @@
 	border: none;
 	background-color: #FCAD00;
 	color: #414143;
+	margin-top: 15px;
 	margin-bottom: 10px;
 }
 
@@ -63,6 +64,11 @@
 
 .down{
 	margin-top: 60px;
+}
+
+.alert{
+	background-color: #FF3939;
+	color: white;
 }
 
 /***********************SECCIÓN OPTIONS*****************************/
