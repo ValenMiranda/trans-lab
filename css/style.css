@@ -59,11 +59,23 @@
 
 /***********************FIN SECCIÓN INICIO*****************************/
 
+.drive{
+	background-color: #727B99;
+}
+
 .opciones{
 	background-color: #DDDEE0;
 	background-position: center;
 	background-size: cover;
 	height: 100vh;
+}
+
+.menu-opciones{
+	margin: 150px;
+}
+
+nav .brand-logo{
+	font-size: 1.1rem;
 }
 
 .btn-opciones{
@@ -72,6 +84,15 @@
 	border: none;
 	background-color: #FCAD00;
 	color: white;
-	padding: 20px 20px;
 	margin-top: 20px;
+	font-size: 15px;
+}
+
+nav{
+	background-color: #3E3F41;
+	border: none;
+}
+
+ul li a i .icon-option{
+	color: #FCAD00;
 }

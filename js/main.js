@@ -1,28 +1,20 @@
 /* Holiii acá va tu código también */
 $(document).ready(function(){
-	// SideNav Options
-	$('.button-collapse').sideNav({
-  edge: 'right', // Choose the horizontal origin
-  closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-});
+	$(".button-collapse").sideNav();
 
-	// Show sideNav
-$('.button-collapse').sideNav('show');
-// Hide sideNav
-$('.button-collapse').sideNav('hide');
-
-
-	function validarPass{
-		var emailVal =  $("#email-signup").val();
-		console.log(emailValue);
-		var caract = new RegExp(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
-		if (caract.test(email) == false){
-			$(div).hide().removeClass('hide').slideDown('fast');
-
-			return false;
-		}else{
-			$(div).hide().addClass('hide').slideDown('slow');
-			return true;
-		}
-	}
+	$("#iniciar-sesion").click(function(event) {
+    if(!(/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/.test($("#email-signup").val()))){
+   			$("#email-signup").append($("#email-signup").val("Error"));
+  		}
+  		if(!(/^\d{8}([0-9])*$/.test($("#pass-signup").val())) ){
+   			$("#pass-signup").append($("#pass-signup").val("Error"));
+  		}
+  		else{
+  			$("#iniciar-sesion").attr("href","options.html");
+        localStorage.setItem('local-mail',$("#email-signup").val());
+        localStorage.setItem('local-tarjeta',$("#pass-signup").val());
+        
+  		}
+	});
+	
 });
