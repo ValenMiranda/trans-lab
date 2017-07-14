@@ -60,10 +60,10 @@ $("#btn-agregar").click(function(){
   }else{ 
       codigos.push(codigoTarjeta);
       var codigoSave = localStorage.getItem("numTarjeta");
-      $(".list").append('<div class="div-codigos">'+codigoTarjeta+'</div>');
+      $(".list").append('<div class="items">'+codigoTarjeta+'</div>');
     }
+});
+
 
 //FIN
 });
-
-    //creo un arreglo al cual hago push los numeros ingresados por el usuario,
