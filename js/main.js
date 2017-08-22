@@ -5,23 +5,7 @@ $(document).ready(function(){
 
   $('.collapsible').collapsible();
 
-  $("#validar").on("click", function(e) {
-    correo();
-    pass();
-    if(correo() && pass()){
-      var emailVal = $("#email").val();
-      /* guardar el correo */
-      localStorage.setItem('email',emailVal);
-      /* Si esta correcto, envía a la página del perfil */
-      window.open('options.html','_self',false);
-    }
-  });
-  $(".grupo").on("keypress", "input", function(e) {
-    var errorInput = $(this).parent("div").parent("div").find(".hidden").length;
-    if(errorInput == 0) {
-      $(this).parent("div").parent("div").find(".alert").addClass('hidden');
-    }        
-  });
+
     //FUNCION PARA VALIDAR EL CORREO
     function correo(){
       var emailVal = $("#email").val();
@@ -31,7 +15,7 @@ $(document).ready(function(){
         $("#error-email").text('Debes ingresar un email valido.');
         return false;
       } else{
-        /*localStorage.setItem('email',emailVal);*/
+        localStorage.setItem('caja-email',emailVal);
         return true;
       }
     }
@@ -50,20 +34,9 @@ $(document).ready(function(){
     }
 
 //arreglo para guardar los códigos
-var codigos = [];
 
-$("#btn-agregar").click(function(){
-  var codigoTarjeta = $("#agregar-tarjetar").val();
-  $("#input-tarjeta").val("");
-  if(codigoTarjeta == ""){
-    return false;
-  }else{ 
-      codigos.push(codigoTarjeta);
-      var codigoSave = localStorage.getItem("numTarjeta");
-      $(".list").append('<div class="items">'+codigoTarjeta+'</div>');
-    }
-});
-
+var correoGuardado = localStorage.getItem('caja-email');
+$('#caja-email').html(correoGuardado);
 
 //FIN
 });

@@ -42,17 +42,17 @@
 		<div class="container">
 			<div class="row">
 				<div class="col s12 center-align residue">
-					<input type="number" class="form-control num-tarjeta" id="agregar-tarjeta" placeholder="&#xf09d;    Número tarjeta">
+					<input type="number" class="form-control num-tarjeta" id="saldo-tarjeta" placeholder="&#xf09d;    Número tarjeta">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col s12">
 					<div class="col s6 center-align">
-						<select class="browser-default">
+						<select class="browser-default" id="selectTarifa">
 							<option value="" disabled selected>Choose your option</option>
-							<option value="1">Option 1</option>
-							<option value="2">Option 2</option>
-							<option value="3">Option 3</option>
+							<option value="$640">Bajo</option>
+							<option value="$660">Medio</option>
+							<option value="$770">Alta</option>
 						</select>
 					</div>
 					<div class="col s6 center-align">
@@ -66,7 +66,10 @@
 				</div>
 			</div>
 			<div class="col s12 center-align">
-				<a href="" class="waves-effect waves-light btn btn-opciones">CALCULAR</a>
+				<a href="#" class="waves-effect waves-light btn btn-opciones" id="calc-tarifa">CALCULAR</a>
+			</div>
+			<div class="col s12 center-align" id="mostrar-resta">
+				
 			</div>
 		</div>
 	</section>
